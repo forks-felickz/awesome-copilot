@@ -424,18 +424,20 @@ For scanning code changes for vulnerable dependencies inside an AI coding agent 
 
 Install the **Advanced Security plugin** which provides dedicated dependency scanning tools and the `/dependency-scanning` skill.
 
-**GitHub Copilot CLI:**
+**GitHub Copilot CLI (shell):**
 ```bash
 # Enable the dependabot toolset for the GitHub MCP Server
 copilot --add-github-mcp-toolset dependabot
+```
 
-# Install the advanced-security plugin for a more tailored experience
-/plugin install advanced-security@copilot-plugins
+**GitHub Copilot CLI (inside `copilot`):**
+```text
+> /plugin install advanced-security@copilot-plugins
 ```
 
 **Visual Studio Code:**
 - Add `"X-MCP-Toolsets": "dependabot"` to your GitHub MCP Server headers, or pick **Dependabot** from the toolset selector in Copilot Chat
-- Install the `advanced-security` agent plugin, then use `/dependency-scanning` in Copilot Chat
+- Install the `advanced-security` plugin, then use `/dependency-scanning` in Copilot Chat
 
 **Example prompt:**
 > Scan the dependencies I added on this branch for known vulnerabilities and tell me which versions to upgrade to before I commit.
